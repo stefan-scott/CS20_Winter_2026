@@ -49,9 +49,14 @@ t.shape("turtle_image.gif")
 t.goto(0,0)
 
 # ON-YOUR-OWN CHALLENGE
+# Design a simple shape or character and determine a series of
+# (x,y) points to express it numerically. Use those points to register
+# a new shape for the custom turtle below.
+
 custom = turtle.Turtle()
 custom.up()
 custom.goto(100,0)
+
 
 
 
