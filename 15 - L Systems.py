@@ -14,10 +14,10 @@ t.speed(0)
 def apply_rules(ch):
     # Apply the rules to a single char
     # -- need to update for each Lsystem
-    if ch == "L":
-        return "+RF-LFL-FR+"
-    elif ch == "R":
-        return "-LF+RFR+FL-"
+    if ch == "X":
+        return "X+YF++YF-FX--FXFX-YF+"
+    elif ch == "Y":
+        return "-FX+YFYF++YF+FX--FX-Y"
     else:
         return ch
     
@@ -50,12 +50,12 @@ def draw_L_system(instructions, angle, distance):
             t.left(angle)
 
 # Main Code
-commands = create_L_system(8, "L")
+commands = create_L_system(6, "FX")
 print(commands)
 
 # Reposition Turtle [optional]
 t.up()
-t.goto(-250,250)
+t.goto(250,250)
 t.down()
 
 # To Change L-Systems
@@ -68,6 +68,6 @@ t.down()
 
 #Draw the L-System
 turtle.tracer(False) #insta-draw
-draw_L_system(commands, 90, 3)
+draw_L_system(commands, 60, 5)
 
 turtle.exitonclick()
