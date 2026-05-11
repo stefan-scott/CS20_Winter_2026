@@ -28,8 +28,8 @@ def apply_rules(ch):
     # to it (if any).
     if ch == "X":
         return "YF+XF+Y"
-    elif ch == "B":
-        return "AB"
+    elif ch == "Y":
+        return "XF-YF-X"
     else:
         return ch
 
@@ -50,5 +50,15 @@ def create_L_system(num_steps, axiom):
     return curr_str
 
 # Main Code Section
-commands = create_L_system(24, "A")
+commands = create_L_system(9, "FX")
 print(commands)
+
+turtle.tracer(False)
+t.up()
+t.goto(-200,200)
+t.down()
+
+draw_L_system(commands, 60, 1)
+
+
+turtle.exitonclick()
