@@ -14,10 +14,10 @@ t.speed(0)
 def apply_rules(ch):
     # Apply the rules to a single char
     # -- need to update for each Lsystem
-    if ch == "A":
-        return "B"
-    elif ch == "B":
-        return "AB"
+    if ch == "L":
+        return "+RF-LFL-FR+"
+    elif ch == "R":
+        return "-LF+RFR+FL-"
     else:
         return ch
     
@@ -36,4 +36,38 @@ def create_L_system(num_steps, axiom):
         current_str = next_str
     return current_str
 
+def draw_L_system(instructions, angle, distance):
+    # have the turtle make a drawing based on
+    # the L-system instructions
+    for cmd in instructions:
+        if cmd == "F":
+            t.fd(distance)
+        elif cmd == "B":
+            t.bk(distance)
+        elif cmd == "+":
+            t.right(angle)
+        elif cmd == "-":
+            t.left(angle)
+
 # Main Code
+commands = create_L_system(8, "L")
+print(commands)
+
+# Reposition Turtle [optional]
+t.up()
+t.goto(-250,250)
+t.down()
+
+# To Change L-Systems
+# 0. cs20.ca  PYTHON STRINGS → #4 (turtle drawing...)
+# 1. update  apply_rules()  with new ruleset
+# 2. update "commands" line w/ growth steps and axiom3
+# 3. update ANGLE in draw_L_system() function call
+# 4. [optional] change turtle reposition
+
+
+#Draw the L-System
+turtle.tracer(False) #insta-draw
+draw_L_system(commands, 90, 3)
+
+turtle.exitonclick()
