@@ -4,6 +4,36 @@
 <html>
     <head>
         <title>Demo Website</title>
+        <!-- CSS MUST BE HERE...for this assignment -->
+        <!-- SELECTOR → RULES (property:value;) -->
+        <style>
+            /* CSS "Select by Tag" */
+            /* Good to apply rules at all occurences of a tag */
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20pt;
+                color: rgb(22, 155, 126);
+            }
+            body{
+                background-color: beige;
+                /* background-image: --look this part up-- */
+            }
+
+            /* CSS "Select by Class" */
+            /* Good to select some, but not all */
+            /* can select mixed element types (tags) */
+            .demoClass{
+                background-color: yellow;
+            }
+
+            /* CSS "Select by ID" */
+            /* Good to style one specific element */
+            /* an ID should be unique for its tag type */
+            /* tag#id */
+            h3#custom{
+                color: red;
+            }
+        </style>
     </head>
 
     <body>
@@ -17,11 +47,11 @@
         <!-- won't necessarily start new line -->
 
         <!-- Header tags go from h1 to h7 -->
-        <h1>Hello</h1>
-        <h3>Hello</h3>
+        <h1 class = "demoClass">Hello</h1>
+        <h3 id = "custom">Hello</h3>
         <h7>Hello</h7>
 
-        <p>Let's add a whole bunch of text
+        <p class = "demoClass">Let's add a<b>whole bunch </b> of text
            Let's add a whole bunch of text
            Let's add a whole bunch of text
            Let's add a whole bunch of text
@@ -41,6 +71,52 @@
         
         <!-- hosting the file yourself is more reliable -->
         <img src="fish.jpg" width="150px">
-    
+
+        <!-- LISTS    [control][/] --> 
+        <!-- ordered list  1 2 3     a b c    i ii iii iv -->
+        <h1>Favourite Sports</h1>
+        <ol type="i">
+            <li>Basketball</li>  <!-- "list item" -->  
+            <li>Soccer</li>
+            <li>Volleyball
+                <ul>
+                    <li>beach volley</li>
+                    <li>indoor volley</li>
+                    <li>fake volley</li>
+                </ul>
+            </li>          
+        </ol>
+
+        <!-- unordered list - bullet points, dashes -->
+        <h1>TO DO LIST</h1>
+        <ul>
+            <li>Pack for trip</li>
+            <li>Grade CS20 quiz</li>
+        </ul>
+
+        <!-- TABLES -->
+        <table  >
+            <tr>
+                <th>NAME</th>
+                <th>GRADE</th>
+            </tr>
+            <tr>
+                <td>Stefan</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <!-- AUDIO -->
+        <audio controls>
+            <source src="https://www.cs20.ca/_static/battleThemeA.mp3">
+        </audio> 
+
+        <!-- VIDEO -->
+        <video width=400 height=300 controls loop>
+            <source src="https://www.cs20.ca/_static/run-cycle.mp4">
+        </video>
+        
+        <!-- EMBEDS iFrame (youTube, twitch, X, tiktok) -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7NOSDKb0HlU?si=OUabC3Pqgz9mX0tI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
     </body>
 </html>
